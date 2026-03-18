@@ -3,13 +3,14 @@ import java.util.Scanner;
 public class FlowChart {
     
     public static void main(String[] args) {
-        for(int i = 0; i < 10; i++) {
-            if(i == 0) { System.out.println("This is a flowchart program.");
+            System.out.println("This is a flowchart program.");
             Scanner first = new Scanner(System.in);
             System.out.println("Your name is? ");
             String name = first.nextLine();
             System.out.println("Hello, " + name + ", I'm gonna flowchart it up now.");
-        } else if (i == 1) { 
+        for(int i = 1; i < 10; i++) {
+            
+         if (i == 1) { 
             Scanner second = new Scanner(System.in);
             System.out.println("Before we start, please type answers exactuly as they are written. Do you understand? (yes/no) ");
             String twoanswer = second.nextLine();
@@ -28,7 +29,7 @@ public class FlowChart {
                     if (twoanswerThree.equals("yes")) {
                         System.out.println("Thank heaveans, initializing next question...");
                     } else if (twoanswerThree.equals("no")) {
-                        System.out.println("Well, i suppose if you don't understand... Can't really change that can I? Well, I mean, we did get to flow chart a little i guess... but c'mon, I made a whole WORLD of flowchart for you to explore, and you chose this one. It doen't count. Goodbye " + name + ".");
+                        System.out.println("Well, i suppose if you don't understand... Can't really change that can I? Well, I mean, we did get to flow chart a little i guess... but c'mon, I made a whole WORLD of flowchart for you to explore, and you chose this one. It doen't count. Guh'bye " + name + ".");
                         i = 67; // This kills the for loop
                     } else {
                         System.out.println("You nitwit! That is not an aceptable answer! Well that's it, I'm not gonna flowchart with you if you can't follow simple instructions! Goodbye!");
