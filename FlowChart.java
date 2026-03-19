@@ -8,7 +8,7 @@ public class FlowChart {
             System.out.println("Your name is? ");
             String name = first.nextLine();
             System.out.println("Hello, " + name + ", I'm gonna flowchart it up now.");
-        for(int i = 1; i < 10; i++) {
+        for(int i = 1; i < 1000; i++) {
             
          if (i == 1) { 
             Scanner second = new Scanner(System.in);
@@ -30,21 +30,29 @@ public class FlowChart {
                         System.out.println("Thank heaveans, initializing next question...");
                     } else if (twoanswerThree.equals("no")) {
                         System.out.println("Well, i suppose if you don't understand... Can't really change that can I? Well, I mean, we did get to flow chart a little i guess... but c'mon, I made a whole WORLD of flowchart for you to explore, and you chose this one. It doen't count. Guh'bye " + name + ".");
-                        i = 67; // This kills the for loop
+                        i = 6700; // This kills the for loop
                     } else {
                         System.out.println("You nitwit! That is not an aceptable answer! Well that's it, I'm not gonna flowchart with you if you can't follow simple instructions! Goodbye!");
-                        i = 67; // This kills the for loop
+                        i = 6700; // This kills the for loop
                     }
                 } else {
                     System.out.println("You nitwit! That is not an aceptable answer! Well that's it, I'm not gonna flowchart with you if you can't follow simple instructions! Goodbye!");
-                    i = 67; // This kills the for loop
+                    i = 6700; // This kills the for loop
                 }
             } else {
                 System.out.println("You nitwit! That is not an aceptable answer! Well that's it, I'm not gonna flowchart with you if you can't follow simple instructions! Goodbye!");
-                i = 67; // This kills the for loop
+                i = 6700; // This kills the for loop
             }
             }
-         else if (i == 2) { System.out.println("filler");
+         else if (i == 2) { System.out.println("You just flowcharted! There were several paths you could've took, or maybe you already did some! But really there was only one way to progress, saying  'yes' at any point would bring you here, and if you said 'no' too many times you'd die. Well from here on out, there WILL be multimple paths! I promise!");
+            Scanner third = new Scanner(System.in);
+            System.out.println("More of a dog person or cat? (dog/cat/bird) ");
+            String threeanswer = third.nextLine();
+            if (threeanswer.equals("dog")) {
+                System.out.println("Woof! You like dogs, cool!");
+            } else if (threeanswer.equals("cat")) {
+                i = 9; // this sends them down the "cat" route, 10-19
+            }
         } else if (i == 3) { System.out.println("filler");
         } else if (i == 4) { System.out.println("filler");
         } else if (i == 5) { System.out.println("still filler");
@@ -52,7 +60,9 @@ public class FlowChart {
         } else if (i == 7) { System.out.println("filler");
         } else if (i == 8) { System.out.println("filler");
         } else if (i == 9) { }
-        
+        // 0-9 is the first 'family' of paths.
+        //so it'd make sence for '10' to come after '9' but it doesnt, cause '9' is an ending, every i ending with '9' must be an ending
+        // that being said, any i can contain one or more or no endings, but anything ending in '9' MUST end. at least for now. as to be less confusing.
 
        
         }
