@@ -8,12 +8,14 @@ public class SlowPrintTest {
     private static boolean lastPrintWasSlow = false;
 
     //Milla seceonds it takes to print each character
-    private static final int minMsBetweenChars = 5, maxMsBetweenChars = 15;
+    private static final int minMsBetweenChars = 15, maxMsBetweenChars = 30;
     // call this once at class init if you want setup
     private static int msBetweenChars() {
     return new Random().nextInt(maxMsBetweenChars - minMsBetweenChars + 1) + minMsBetweenChars;
 }
-    private static final int msForEachWord = 601;
+    private static final int msForEachWord = 100;
+
+    private static final int msForPunctuation = 550;
 
     // call this once at class init if you want setup
     static void init() { 
@@ -29,9 +31,15 @@ public class SlowPrintTest {
         try {
             Thread.sleep(delaySeconds * msForEachWord);
             for (char c : s.toCharArray()) {
+                if (c == ',' || c == '.' || c == '!' || c == '?') {
+                    Thread.sleep(msForPunctuation); // longer pause for punctuation
+                    System.out.print(c);
+                    System.out.flush();
+                    Thread.sleep(msForPunctuation); // longer pause for punctuation
+                } else {
                 System.out.print(c);
                 System.out.flush();
-                Thread.sleep(msBetweenChars());
+                Thread.sleep(msBetweenChars()); }
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -54,9 +62,15 @@ public class SlowPrintTest {
         try {
             Thread.sleep(delaySeconds * msForEachWord);
             for (char c : s.toCharArray()) {
+                if (c == ',' || c == '.' || c == '!' || c == '?') {
+                    Thread.sleep(msForPunctuation); // longer pause for punctuation
+                    System.out.print(c);
+                    System.out.flush();
+                    Thread.sleep(msForPunctuation); // longer pause for punctuation
+                } else {
                 System.out.print(c);
                 System.out.flush();
-                Thread.sleep(msBetweenChars());
+                Thread.sleep(msBetweenChars()); }
             }
             System.out.println();
         } catch (InterruptedException e) {
