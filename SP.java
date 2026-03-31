@@ -17,7 +17,14 @@ public class SP {
 
     private static final int msForPunctuation = 400;
 
-
+    private static final String RESET = "\u001B[0m";
+    private static final String RED = "\u001B[31m";
+    private static final String GREEN = "\u001B[32m";
+    private static final String YELLOW = "\u001B[33m";
+    private static final String BLUE = "\u001B[34m";
+    private static final String PURPLE = "\u001B[35m";
+    private static final String CYAN = "\u001B[36m";
+    private static final String WHITE = "\u001B[37m";
 
     // call this once at class init if you want setup
     static void init() { 
@@ -101,6 +108,45 @@ public class SP {
         lastPrintWasSlow = true;
     }
 
+
+
+    static void colorPrintln(String s, String color) {
+         int words = 0;
+        if (s != null && !s.isBlank()) {
+            words = s.trim().split("\\s+").length;
+        }
+        long delaySeconds = lastPrintWasSlow ? lastSlowWordCount : words;
+        try {
+            Thread.sleep(delaySeconds * msForEachWord);
+            System.out.println(); // start on a new line
+            for (int i = 0; i < s.length(); i++) {
+                char c = s.charAt(i);
+                if (i != 0 && (c == ',' || c == '.' || c == '!' || c == '?' || c == ';' || c == ':')) { 
+                    if (s.charAt(i-1) != ' ' && s.charAt(i-1) != ',' && s.charAt(i-1) != '.' && s.charAt(i-1) != '!' && s.charAt(i-1) != '?' && s.charAt(i-1) != ';' && s.charAt(i-1) != ':') {
+                         // longer pause before punctuation if previous char was not punctuation or space
+                        System.out.print(c);
+                        System.out.flush();
+                        Thread.sleep(msForPunctuation); // longer pause for punctuation
+                    } else { // skip printing punctuation if it directly follows another punctuation or space
+                        Thread.sleep(msForPunctuation); // longer pause for punctuation
+                        System.out.print(c);
+                        System.out.flush();
+                        Thread.sleep(msForPunctuation); // longer pause for punctuation
+                    }
+                } else {
+                    System.out.print(c);
+                    System.out.flush();
+                    Thread.sleep(msBetweenChars()); }
+            
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // update shared state for the next slow print call
+        lastSlowWordCount = words;
+        lastPrintWasSlow = true;
+    }
     public static void main(String[] args) {
         init();
         slowPrintln("Hello after " + 1 + " second");

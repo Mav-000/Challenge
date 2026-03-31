@@ -1,18 +1,17 @@
 import java.util.Scanner;
 
 public class FlowChart {
-    
-    public static void main(String[] args) {
 
+     Scanner input = new Scanner(System.in);
 
-            // Varibles 
-            static boolean askYesNo(Scanner input, String question) { SP.slowPrint(question + " (yes/no) "); 
+    // methods 
+            public static boolean askYesNo(Scanner input, String question) { SP.slowPrint(question + " (yes/no) "); 
             String answer = input.nextLine(); 
             if (answer.equals("yes")) return true; 
             if (answer.equals("no")) return false; 
             SP.slowPrintln("Invalid input."); 
             return askYesNo(input, question); // recursion retry
-
+    }
             // this how you use that ^^. ONLY YES/NO QUESTION!!
             /*  if (askYesNo(input, "Do you understand?")) {
                         i = 19; // or wherever you want to send them
@@ -20,9 +19,16 @@ public class FlowChart {
                         i = 6700; // kills loop
                     }                                             */
 
+    public static void main(String[] args) {
+
+            
+            
             /* Table of contents  
-            for i = 
-            1-9 is the start
+            1 is start, checks understanding
+            2 sends them down the cat dog bird paths 
+            3 dog
+            20 cat
+            40 bird
             
             
             */ 
@@ -75,7 +81,8 @@ public class FlowChart {
             if (threeanswer.equals("dog")) {
                 SP.slowPrintln("Woof! You like dogs, cool!");
             } else if (threeanswer.equals("cat")) {
-                i = 9; // this sends them down the "cat" route, 10-19
+                    SP.slowPrintln("Meow! You like cats, cool!");
+                i = 19; // this sends them down the "cat" route, 10-19
             }
         } else if (i == 3) { SP.slowPrintln("filler");
         } else if (i == 4) { SP.slowPrintln("filler");
@@ -89,7 +96,7 @@ public class FlowChart {
         // that being said, any i can contain one or more or no endings, but anything ending in '9' MUST end. at least for now. as to be less confusing.
 
        
-        }
+    }
          SP.slowPrintln("End of the flowchart program.");
     }
 }
