@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class FlowChart {
 
-     Scanner input = new Scanner(System.in);
+     Scanner scan = new Scanner(System.in);
 
     // methods 
             public static boolean askYesNo(Scanner input, String question) { SP.slowPrint(question + " (yes/no) "); 
@@ -25,7 +25,7 @@ public class FlowChart {
             
             /* Table of contents  
             1 is start, checks understanding
-            2 sends them down the cat dog bird paths 
+            2 choice them down the cat dog bird paths 
             3 dog
             20 cat
             40 bird
@@ -84,17 +84,34 @@ public class FlowChart {
                     SP.slowPrintln("Meow! You like cats, cool!");
                 i = 19; // this sends them down the "cat" route, 10-19
             }
-        } else if (i == 3) { SP.slowPrintln("filler");
+        } else if (i == 3) { SP.slowPrintln("");
         } else if (i == 4) { SP.slowPrintln("filler");
         } else if (i == 5) { SP.slowPrintln("still filler");
         } else if (i == 6) { SP.slowPrintln("yeah, i haven't made these ones yet");
         } else if (i == 7) { SP.slowPrintln("filler");
         } else if (i == 8) { SP.slowPrintln("filler");
-        } else if (i == 9) { }
-        // 0-9 is the first 'family' of paths.
-        //so it'd make sence for '10' to come after '9' but it doesnt, cause '9' is an ending, every i ending with '9' must be an ending
-        // that being said, any i can contain one or more or no endings, but anything ending in '9' MUST end. at least for now. as to be less confusing.
+        } else if (i == 9) { SP.slowPrintln("filler");
 
+        } else if (i == 10) { SP.slowPrintln("You are on the poop path! Meow!"); 
+        } else if (i == 11) { SP.slowPrintln("filler");
+        } else if (i == 12) { SP.slowPrintln("filler");
+        } else if (i == 13) { SP.slowPrintln("filler");
+        } else if (i == 14) { SP.slowPrintln("filler");
+        } else if (i == 15) { SP.slowPrintln("filler");
+        } else if (i == 16) { SP.slowPrintln("filler");
+        } else if (i == 17) { SP.slowPrintln("filler");
+        } else if (i == 18) { SP.slowPrintln("filler");
+        } else if (i == 19) { SP.slowPrintln("Cats huh? well-"); 
+            System.out.print("BOOM");
+            SP.slowPrintln("MEAOW MEAOW MEAOW YOU HAVE SUMMONED CAT MEAOW!", "YELLOW");
+            
+
+
+        } else if (i == 20) { SP.slowPrintln("filler");
+        } else if (i == 21) { SP.slowPrintln("filler");
+        } else if (i == 22) { SP.slowPrintln("filler");
+        } else if (i == 23)
+       
        
     }
          SP.slowPrintln("End of the flowchart program.");
