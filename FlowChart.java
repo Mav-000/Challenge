@@ -25,8 +25,8 @@ public class FlowChart {
             
             /* Table of contents  
             1 is start, checks understanding
-            2 choice them down the cat dog bird paths 
-            3 dog
+            2 info and yap 
+            3 animal choice
             20 cat
             40 bird
             
@@ -75,16 +75,26 @@ public class FlowChart {
             }
             }
          else if (i == 2) { SP.slowPrintln("You just flowcharted! There were several paths you could've took, or maybe you already did some! But really there was only one way to progress, saying  'yes' at any point would bring you here, and if you said 'no' too many times you'd die. Well from here on out, there WILL be multimple paths! I promise!");
+            SP.slowPrintln("Before, if you misstyped or said somthing I dont undrstand, I'd have just end the flowchart and calll you a nitwit, but from here on out, I'll be gracefull and let you retry.");
+            SP.slowPrintln("Here we go!"); }
+
+        else if (i == 3) {
             Scanner third = new Scanner(System.in);
-            SP.slowPrint("More of a dog person or cat? (dog/cat/bird) ");
-            String threeanswer = third.nextLine();
+            SP.slowPrintln("More of a dog person or cat? (dog/cat/bird) ");
+            String threeanswer = third.nextLine().toLowerCase().trim();
             if (threeanswer.equals("dog")) {
                 SP.slowPrintln("Woof! You like dogs, cool!");
             } else if (threeanswer.equals("cat")) {
-                    SP.slowPrintln("Meow! You like cats, cool!");
                 i = 19; // this sends them down the "cat" route, 10-19
+            } else if (threeanswer.equals("bird")) {
+                SP.slowPrintln("Chirp! You like birds, cool!");
+                i = 40; // this sends them down the "bird" route, 20-39
+            } else {
+                SP.slowPrintln("Haha, I have no clue what you just said!!! HAHAHA, oh man, you're funny! Oh haha, lets try that again!");
+                i = 2; // retry 
             }
-        } else if (i == 3) { SP.slowPrintln("");
+        
+        } else if (i == ) { SP.slowPrintln("");
         } else if (i == 4) { SP.slowPrintln("filler");
         } else if (i == 5) { SP.slowPrintln("still filler");
         } else if (i == 6) { SP.slowPrintln("yeah, i haven't made these ones yet");
@@ -101,16 +111,25 @@ public class FlowChart {
         } else if (i == 16) { SP.slowPrintln("filler");
         } else if (i == 17) { SP.slowPrintln("filler");
         } else if (i == 18) { SP.slowPrintln("filler");
-        } else if (i == 19) { SP.slowPrintln("Cats huh? well-"); 
+        } else if (i == 20) { SP.slowPrintln("Cats huh? well-"); 
             System.out.print("BOOM");
             SP.slowPrintln("MEAOW MEAOW MEAOW YOU HAVE SUMMONED CAT MEAOW!", "YELLOW");
-            
+            String catAns1 = input.nextLine();
+            System.out.print("Choice: run, fight, friend ");
+            switch (catAns1) {
+                case "run":
+                case "fight": 
+                case "friend":
+                     SP.slowPrintln("filler");
+                default:
+                    System.out.println("ERROR 846e7: REBOOT");
+                    SP.slowPrint("...");
 
+            }
 
-        } else if (i == 20) { SP.slowPrintln("filler");
         } else if (i == 21) { SP.slowPrintln("filler");
         } else if (i == 22) { SP.slowPrintln("filler");
-        } else if (i == 23)
+        } else if (i == 23) {}
        
        
     }
