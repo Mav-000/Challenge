@@ -26,3 +26,4 @@ I just so happend to make a flow chart in here that i liked so much i knew i had
 then as i was making it, I relized some of the prints were too long and just all apreaing at once, yucky
 
 So I started on a slow print method (man I really want to call it a function but i don't think that's what they are called) (I miss python)
+well. this is complicated. very complicated 
